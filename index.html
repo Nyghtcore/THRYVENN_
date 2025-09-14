@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thryvenn Creations — 3D Printed Goods & Custom Designs</title>
+  <meta name="description" content="Thryvenn Creations designs and manufactures playful, functional 3D‑printed products in Puerto Rico. Custom orders welcome: toys, keychains, planters, RC parts, organizers, and more." />
+  <meta name="author" content="Thryvenn LLC" />
+  <meta property="og:title" content="Thryvenn Creations" />
+  <meta property="og:description" content="Playful, functional 3D‑printed goods — made in Puerto Rico." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:url" content="https://thryvenn.com/" />
+  <meta name="theme-color" content="#6d28d9" />
+
+  <!-- Tailwind via CDN for quick deploy. Swap to local build for production. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c4b5fd',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+              700: '#6d28d9', // primary
+              800: '#5b21b6',
+              900: '#4c1d95'
+            },
+            accent: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              200: '#a5f3fc',
+              300: '#67e8f9',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              700: '#0e7490',
+              800: '#155e75',
+              900: '#164e63'
+            }
+          },
+          fontFamily: {
+            display: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif"],
+            body: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Favicon placeholders -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%236d28d9'/%3E%3Cpath d='M30 60 L50 20 L70 60 L50 80 Z' fill='white'/%3E%3C/svg%3E" />
+
+  <!-- Simple JSON‑LD Organization schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Thryvenn Creations",
+    "url": "https://thryvenn.com/",
+    "logo": "https://thryvenn.com/og-image.png",
+    "sameAs": [
+      "https://instagram.com/thryvenncreations"
+    ],
+    "foundingLocation": {
+      "@type": "Place",
+      "name": "Puerto Rico"
+    }
+  }
+  </script>
+
+  <style>
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+    /* Gradient text utility */
+    .text-gradient { background: linear-gradient(90deg, #8b5cf6, #06b6d4); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    /* Glass card */
+    .glass { background: rgba(255,255,255,0.7); backdrop-filter: saturate(180%) blur(14px); }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-brand-50 to-white text-slate-800 font-body">
+  <!-- Top Bar -->
+  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex h-14 items-center justify-between">
+        <a href="#home" class="flex items-center gap-2 group">
+          <span class="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-brand-700 text-white shadow">T</span>
+          <span class="font-semibold tracking-tight group-hover:text-brand-700">Thryvenn Creations</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#products" class="hover:text-brand-700">Products</a>
+          <a href="#custom" class="hover:text-brand-700">Custom</a>
+          <a href="#about" class="hover:text-brand-700">About</a>
+          <a href="#contact" class="hover:text-brand-700">Contact</a>
+          <a href="https://yourshop.bigcartel.com" target="_blank" rel="noopener" class="inline-flex items-center rounded-lg bg-brand-700 px-4 py-2 font-medium text-white shadow hover:bg-brand-800">Shop</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-lg p-2 hover:bg-slate-100" aria-label="Open Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-100 bg-white">
+      <div class="px-4 py-3 flex flex-col gap-3 text-sm">
+        <a href="#products" class="hover:text-brand-700">Products</a>
+        <a href="#custom" class="hover:text-brand-700">Custom</a>
+        <a href="#about" class="hover:text-brand-700">About</a>
+        <a href="#contact" class="hover:text-brand-700">Contact</a>
+        <a href="https://yourshop.bigcartel.com" target="_blank" rel="noopener" class="inline-flex items-center justify-center rounded-lg bg-brand-700 px-4 py-2 font-medium text-white shadow hover:bg-brand-800">Shop</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative overflow-hidden">
+    <div class="absolute inset-0 -z-10 opacity-30" aria-hidden="true">
+      <svg class="w-[160%] -translate-x-1/4 -translate-y-1/6" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#8b5cf6"/>
+            <stop offset="100%" stop-color="#06b6d4"/>
+          </linearGradient>
+        </defs>
+        <path d="M0,200 C300,300 900,100 1200,220 L1200,0 L0,0 Z" fill="url(#g)"/>
+      </svg>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <div class="grid md:grid-cols-2 items-center gap-10">
+        <div>
+          <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+            Playful, functional <span class="text-gradient">3D‑printed goods</span>
+          </h1>
+          <p class="mt-4 text-lg text-slate-600">Designed and manufactured in Puerto Rico. From keychains and figurines to organizers and RC parts — we make ideas tangible. Custom commissions welcome.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="https://yourshop.bigcartel.com" target="_blank" rel="noopener" class="inline-flex items-center rounded-xl bg-brand-700 px-5 py-3 text-white font-medium shadow hover:bg-brand-800">Shop Now</a>
+            <a href="#custom" class="inline-flex items-center rounded-xl border border-slate-300 px-5 py-3 font-medium hover:border-brand-400 hover:text-brand-800">Request a Custom</a>
+          </div>
+          <div class="mt-6 flex items-center gap-6 text-sm text-slate-600">
+            <div class="flex items-center gap-2"><span class="inline-block h-2 w-2 rounded-full bg-emerald-500"></span> Made‑to‑order</div>
+            <div class="flex items-center gap-2"><span class="inline-block h-2 w-2 rounded-full bg-indigo-500"></span> Local pickup (PR) & shipping</div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="glass rounded-3xl p-4 shadow-xl ring-1 ring-slate-200">
+            <div class="aspect-[4/3] w-full rounded-2xl bg-gradient-to-br from-brand-100 via-white to-accent-100 grid place-items-center">
+              <div class="text-center p-6">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="mx-auto h-16 w-16 text-brand-700" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l4-4h10l4 4v8l-4 4H7l-4-4V8z"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h8M8 16h5"/></svg>
+                <p class="mt-3 font-semibold">Thryvenn Creations</p>
+                <p class="text-sm text-slate-600">Drop your hero image here (product collage, printer farm, or featured design).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Highlights -->
+  <section id="products" class="py-16 sm:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between gap-4">
+        <h2 class="text-2xl sm:text-3xl font-bold">Featured Items</h2>
+        <a href="https://yourshop.bigcartel.com" target="_blank" rel="noopener" class="text-brand-700 hover:underline">View all →</a>
+      </div>
+
+      <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+        <!-- Card template: duplicate for real items -->
+        <article class="group rounded-2xl border border-slate-200 bg-white p-3 hover:shadow-md transition">
+          <div class="aspect-square rounded-xl bg-slate-100 grid place-items-center overflow-hidden">
+            <span class="text-slate-400 text-sm">Image</span>
+          </div>
+          <h3 class="mt-3 font-semibold">Knit Charmander Figurine</h3>
+          <p class="text-sm text-slate-600">Adorable knit‑style finish.</p>
+          <div class="mt-2 flex items-center justify-between">
+            <span class="font-semibold">$12</span>
+            <a href="https://yourshop.bigcartel.com" target="_blank" rel="noopener" class="text-sm text-brand-700 hover:underline">Buy</a>
+          </div>
+        </article>
+
+        <article class="group rounded-2xl border border-slate-200 bg-white p-3 hover:shadow-md transition">
+          <div class="aspect-square rounded-xl bg-slate-100 grid place-items-center overflow-hidden">
+            <span class="text-slate-400 text-sm">Image</span>
+          </div>
+          <h3 class="mt-3 font-semibold">Articulated Bulbasaur</h3>
+          <p class="text-sm text-slate-600">Poseable, print‑in‑place fun.</p>
+          <div class="mt-2 flex items-center justify-between">
+            <span class="font-semibold">$15</span>
+            <a href="https://yourshop.bigcartel.com" target="_blank" rel="noopener" class="text-sm text-brand-700 hover:underline">Buy</a>
+          </div>
+        </article>
+
+        <article class="group rounded-2xl border border-slate-200 bg-white p-3 hover:shadow-md transition">
+          <div class="aspect-square rounded-xl bg-slate-100 grid place-items-center overflow-hidden">
+            <span class="text-slate-400 text-sm">Image</span>
+          </div>
+          <h3 class="mt-3 font-semibold">Coquí Keychain</h3>
+          <p class="text-sm text-slate-600">Classic, Jíbaro & Astronaut variants.</p>
+          <div class="mt-2 flex items-center justify-between">
+            <span class="font-semibold">$8</span>
+            <a href="https://yourshop.bigcartel.com" target="_blank" rel="noopener" class="text-sm text-brand-700 hover:underline">Buy</a>
+          </div>
+        </article>
+
+        <article class="group rounded-2xl border border-slate-200 bg-white p-3 hover:shadow-md transition">
+          <div class="aspect-square rounded-xl bg-slate-100 grid place-items-center overflow-hidden">
+            <span class="text-slate-400 text-sm">Image</span>
+          </div>
+          <h3 class="mt-3 font-semibold">Blank Phone Stand</h3>
+          <p class="text-sm text-slate-600">Personalizable with names or logos.</p>
+          <div class="mt-2 flex items-center justify-between">
+            <span class="font-semibold">$10</span>
+            <a href="https://yourshop.bigcartel.com" target="_blank" rel="noopener" class="text-sm text-brand-700 hover:underline">Buy</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Badges -->
+      <div class="mt-10 flex flex-wrap items-center gap-3 text-sm">
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1"><span class="h-2 w-2 rounded-full bg-emerald-500"></span> Quality PLA+/PETG</span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1"><span class="h-2 w-2 rounded-full bg-indigo-500"></span> Custom colors</span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1"><span class="h-2 w-2 rounded-full bg-amber-500"></span> Bulk discounts</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom Work CTA -->
+  <section id="custom" class="py-16 sm:py-24 bg-gradient-to-br from-white to-brand-50 border-y border-slate-100">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold">Need something unique?</h2>
+      <p class="mt-3 text-slate-600">We love commissions: logos, event favors, organizers tailored to your tools, RC parts, cosplay accessories, and more. Share your idea — we will prototype and print.</p>
+      <a href="#contact" class="mt-6 inline-flex items-center rounded-xl bg-accent-600 px-5 py-3 text-white font-medium shadow hover:bg-accent-700">Start a Custom Project</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-16 sm:py-24">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold">About Thryvenn Creations</h2>
+          <p class="mt-4 text-slate-600">Thryvenn Creations is the product wing of <span class="font-medium">Thryvenn LLC</span>, co‑owned by Pedro J. González Rivera and Graciela C. Martínez Serrano in Puerto Rico. We design, test, and manufacture 3D‑printed goods that are both playful and practical.</p>
+          <ul class="mt-4 list-disc pl-5 text-slate-700 space-y-2">
+            <li>Small‑batch production with quality control</li>
+            <li>Fast iteration from sketch to prototype</li>
+            <li>Sustainable packaging options</li>
+          </ul>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="https://instagram.com/thryvenncreations" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-4 py-2 hover:border-brand-400"><span>Instagram</span></a>
+            <a href="https://yourshop.bigcartel.com" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-xl bg-brand-700 px-4 py-2 text-white hover:bg-brand-800">Shop Big Cartel</a>
+          </div>
+        </div>
+        <div class="glass rounded-3xl p-6 ring-1 ring-slate-200 shadow-xl">
+          <div class="grid grid-cols-3 gap-3">
+            <div class="aspect-square rounded-xl bg-slate-100 grid place-items-center text-slate-400 text-sm">Photo</div>
+            <div class="aspect-square rounded-xl bg-slate-100 grid place-items-center text-slate-400 text-sm">Photo</div>
+            <div class="aspect-square rounded-xl bg-slate-100 grid place-items-center text-slate-400 text-sm">Photo</div>
+            <div class="aspect-square rounded-xl bg-slate-100 grid place-items-center text-slate-400 text-sm">Photo</div>
+            <div class="aspect-square rounded-xl bg-slate-100 grid place-items-center text-slate-400 text-sm">Photo</div>
+            <div class="aspect-square rounded-xl bg-slate-100 grid place-items-center text-slate-400 text-sm">Photo</div>
+          </div>
+          <p class="mt-3 text-center text-sm text-slate-600">Swap with product and workshop images.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 sm:py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-2xl sm:text-3xl font-bold">Contact & Custom Requests</h2>
+        <p class="mt-2 text-slate-600">Tell us what you’d like made. We’ll reply within 1–2 business days.</p>
+      </div>
+
+      <form action="https://formspree.io/f/your-id" method="POST" class="mt-8 grid grid-cols-1 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium">Name</label>
+            <input required type="text" name="name" class="mt-1 w-full rounded-xl border-slate-300 focus:border-brand-400 focus:ring-brand-400" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium">Email</label>
+            <input required type="email" name="email" class="mt-1 w-full rounded-xl border-slate-300 focus:border-brand-400 focus:ring-brand-400" />
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-medium">What are you looking for?</label>
+          <textarea required name="message" rows="5" class="mt-1 w-full rounded-xl border-slate-300 focus:border-brand-400 focus:ring-brand-400" placeholder="Keychains for an event, a custom organizer for my tools, an articulated figurine…"></textarea>
+        </div>
+        <div class="flex items-center justify-between">
+          <label class="inline-flex items-center gap-2 text-sm text-slate-600"><input type="checkbox" name="subscribe" class="rounded"/> Join our occasional updates</label>
+          <button type="submit" class="inline-flex items-center rounded-xl bg-brand-700 px-5 py-3 text-white font-medium shadow hover:bg-brand-800">Send</button>
+        </div>
+      </form>
+
+      <div class="mt-8 grid sm:grid-cols-3 gap-4 text-sm">
+        <div class="rounded-2xl border border-slate-200 bg-white p-4">
+          <p class="font-semibold">Email</p>
+          <a href="mailto:hello@thryvenn.com" class="text-brand-700 hover:underline">hello@thryvenn.com</a>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-4">
+          <p class="font-semibold">Location</p>
+          <p>Puerto Rico — 📦 Shipping & local pickup</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-4">
+          <p class="font-semibold">Hours</p>
+          <p>Mon–Fri 10:00–17:00 AST</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 text-sm">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-slate-600">© <span id="year"></span> Thryvenn LLC · All rights reserved.</p>
+        <nav class="flex items-center gap-4">
+          <a href="#about" class="hover:text-brand-700">About</a>
+          <a href="#contact" class="hover:text-brand-700">Contact</a>
+          <a href="/privacy.html" class="hover:text-brand-700">Privacy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
